@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Noches de Cine en Casa</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://kit.fontawesome.com/2ee1410c83.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>PelGen CaC</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="/templates/generador.html">Generador de Ideas</a></li>
+                <li><a href="/templates/about.html">Nosotros</a></li>
+                <li><a href="/templates/contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h2 class="h2-contact">Contacto</h2>
+            <form id="contact-form" action="https://formsubmit.co/consultaspeliscodo@gmail.com" method="POST" target="_blank" netlify> <!--Mail: consultaspeliscodo@gmail.com contraseña: consultas123 -->
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required  placeholder="Ingrese su nombre aquí..." maxlength="60">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required  placeholder="Ingrese su correo electrónico aquí..." maxlength="60">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Ingrese sus comentarios aquí..." maxlength="400"></textarea>
+                </div>
+                <!-- <nuevo> -->
+                <div class="form-group">
+                    <label for="reason">Motivo de contacto:</label>
+                    <select id="reason" name="reason" required>
+                            <option value="">Selecciona un motivo</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="comentario">Comentario</option>
+                            <option value="sugerencia">Sugerencia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span>¿Cómo nos encontraste?</span>
+                    <input type="radio" id="search-engine" name="found" value="search_engine" required>Aleatoriamente
+                    <input type="radio" id="social-media" name="found" value="social_media">Redes sociales
+                    <input type="radio" id="recommendation" name="found" value="recommendation">Recomendación
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>¿Te gustaría recibir nuestro boletín?
+                    <label for="newsletter"></label>
+                </div>
+                <!-- campo de imagen -->
+                <div class="form-group-boton">
+                    <label for="fimage">Subir imagen de pelicula favorita:</label>
+                    <label for="fimage" class="custom-file-upload">Seleccionar archivo</label>
+                    <input type="file" id="fimage" name="fimage" accept="image/*" required>
+                  </div>
+                <br>
+                <div class="form-txt">
+                    <a href="#">Politica de Privacidad</a>
+                    <a href="#"> Terminos y Condiciones</a>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                    <input type="hidden" name="_next" value="https://cursopython24266g8.netlify.app"> <!-- cuando lo subamos a netlify poner en value la url (link) -->
+                    <input type="hidden" name="_captcha" value="false">
+                </div>    
+            </form>
+        </section>
+    </main>  
+    
+    <script>
+        // Función para validar el formulario
+        function validarFormulario() {
+            // Obtener los elementos del formulario
+            var nombre = document.getElementById('name');
+            var email = document.getElementById('email');
+            var mensaje = document.getElementById('message');
+            var motivo = document.getElementById('reason');
+            var encontraste = document.querySelector('input[name="found"]:checked'); // Corregido
+            var boletin = document.getElementById('newsletter');
+            var imagen = document.getElementById('image');
+    
+            // Verificar que los campos no estén vacíos
+            if (nombre.value === '' || email.value === '' || mensaje.value === '' || motivo.value === '' || !encontraste /*|| boletin.checked === false*/ || imagen.value === '') {
+                alert('Por favor, complete todos los campos obligatorios.');
+                return false; // Detener el envío del formulario
+            }
+    
+            // Si todos los campos están completos, se enviará el formulario
+            return true;
+        }
+    
+        // Agregar el evento 'submit' al formulario para llamar a la función de validación
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            // Validar el formulario
+            if (!validarFormulario()) {
+                event.preventDefault(); // Detener el envío del formulario si no está validado
+            }
+        });
+    </script>
+
+    <footer>
+        <a class="redsocial" href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+        <a class="redsocial" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a class="redsocial" href="https://ar.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+        <a class="redsocial" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+        <a class="redsocial" href="https://www.linkedin.com/notifications/?filter=all" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <p>&copy; 2024 Generador de Ideas para Noches de Cine en Casa</p>
+    </footer>
+    <script src="../static/js/validar-registro.js"></script>
+</body>
+</html>

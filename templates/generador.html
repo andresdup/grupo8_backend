@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Ideas para Noches de Cine en Casa</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://kit.fontawesome.com/2ee1410c83.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <h1>Generador de Ideas para Noches de Cine en Casa</h1>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="/templates/generador.html">Generador de Ideas</a></li>
+            <li><a href="/templates/about.html">Nosotros</a></li>
+            <li><a href="/templates/contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="generador">
+        <h2>¿Qué tipo de película estás buscando?</h2>
+        <form id="formulario">
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero">
+                <option value="accion">Acción</option>
+                <option value="comedia">Comedia</option>
+                <option value="drama">Drama</option>
+                <option value="terror">Terror</option>
+                <option value="romance">Romance</option>
+                <!-- Agrega más opciones de género según sea necesario -->
+            </select>
+
+            <label for="estado_de_animo">Estado de Ánimo:</label>
+            <select id="estado_de_animo" name="estado_de_animo">
+                <option value="feliz">Feliz</option>
+                <option value="nostalgico">Nostálgico</option>
+                <option value="emocionado">Emocionado</option>
+                <option value="relajado">Relajado</option>
+                <!-- Agrega más opciones de estado de ánimo según sea necesario -->
+            </select>
+
+            <label for="ocasion">Ocasión:</label>
+            <select id="ocasion" name="ocasion">
+                <option value="noche_romantica">Noche Romántica</option>
+                <option value="noche_de_lluvia">Noche de Lluvia</option>
+                <option value="noche_de_terror">Noche de Terror</option>
+                <!-- Agrega más opciones de ocasión según sea necesario -->
+            </select>
+            <p></p>
+            <p></p>
+            <button type="button" onclick="generarIdeas()">Generar Ideas</button>
+        </form>
+    </section>
+
+    <section id="resultado" style="display: none;">
+        <h2>¡Aquí tienes tu idea para la noche de cine en casa!</h2>
+        <div id="pelicula"></div>
+        <div id="aperitivo"></div>
+        <div id="actividad"></div>
+    </section>
+</main>
+<footer>
+    <a class="redsocial" href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
+    <a class="redsocial" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a class="redsocial" href="https://ar.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+    <a class="redsocial" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+    <a class="redsocial" href="https://www.linkedin.com/notifications/?filter=all" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <p>&copy; 2024 Generador de Ideas para Noches de Cine en Casa</p>
+</footer>
+
+<script src="../static/js/script.js"></script>
+</body>
+</html>
